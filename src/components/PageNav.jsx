@@ -2,8 +2,6 @@ import { NavLink } from "react-router-dom";
 import styles from "./PageNav.module.css";
 import Logo from "./Logo.jsx";
 
-console.log(styles);
-
 function PageNav() {
   return (
     <nav className={styles.nav}>
