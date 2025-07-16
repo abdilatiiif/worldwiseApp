@@ -1,14 +1,16 @@
-import styles from "./City.module.css";
+//import styles from "./City.module.css";
 
-const formatDate = (date) =>
-  new Intl.DateTimeFormat("en", {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-    weekday: "long",
-  }).format(new Date(date));
+import { useParams, useSearchParams } from "react-router-dom";
 
 function City() {
+  const { id } = useParams();
+  console.log(id);
+
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const lat = searchParams.get("lat");
+  const lng = searchParams.get("lng");
+
   // TEMP DATA
   const currentCity = {
     cityName: "Lisbon",
@@ -17,8 +19,14 @@ function City() {
     notes: "My favorite city so far!",
   };
 
-  const { cityName, emoji, date, notes } = currentCity;
+  // const { cityName, emoji, date, notes } = currentCity;
 
+  return (
+    <h1>
+      city {lat} , {lng}
+    </h1>
+  );
+  /*
   return (
     <div className={styles.city}>
       <div className={styles.row}>
@@ -55,7 +63,7 @@ function City() {
         <ButtonBack />
       </div>
     </div>
-  );
+  );*/
 }
 
 export default City;

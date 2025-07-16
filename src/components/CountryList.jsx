@@ -24,8 +24,6 @@ function CountryList({ cities, isLoading }) {
     return arr;
   }, []);
 
-  console.log(uniq);
-
   return (
     <ul className={styles.countryList}>
       {countries.map((country) => (
